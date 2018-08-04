@@ -1,12 +1,12 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import { render } from 'react-dom';
 
-require('./index.css');
-var Popular = require('./components/Popular.js');
-var App = require('./components/App.js')
+import './index.css';
+import Popular from './components/Popular.js';
+import App from './components/App.js';
 
 
-ReactDOM.render(
+render(
     <App />,
     document.getElementById('app')
 );

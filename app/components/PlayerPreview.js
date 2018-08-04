@@ -1,24 +1,24 @@
-var React = require('react');
-var PropTypes = require('prop-types');
+import React from 'react';
+import { string } from 'prop-types';
 
-function PlayerPreview(props) {
+function PlayerPreview({avatar, username, children}) {
     return (
         <div>
             <div className='column'>
                 <img
                     className='avatar'
-                    src={props.avatar}
-                    alt={'Avatar for ' + props.username}
+                    src={avatar}
+                    alt={'Avatar for ' + username}
                 />
-                <h2 className='username'>@{props.username}</h2>
+                <h2 className='username'>@{username}</h2>
             </div>
-            {props.children}
+            {children}
         </div>
     )
 }
 PlayerPreview.propTypes = {
-    avatar: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
+    avatar: string.isRequired,
+    username: string.isRequired,
 };
 
-module.exports = PlayerPreview;
+export default PlayerPreview;
